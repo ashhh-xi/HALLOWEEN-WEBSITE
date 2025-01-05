@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Trick or Treat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <!-- Add a university name section above the nav bar -->
+        <div class="university-header">
+            <h1>Dayanand Sagar University</h1>
+        </div>
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="#" id="nav-home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="movies.html" id="nav-watch">Watch</a></li>
+                <li><a href="#cook">Cook</a></li>
+            </ul>
+        </nav>
+
+        <div class="title-section">
+            <h1>Halloween Trick or Treat</h1>
+            <p>Welcome to the Haunted Halloween Hub</p>
+            <p>Your one-stop destination for Halloween costumes, horror movies, recipes, and haunted locations</p>
+        </div>
+
+        <section>
+            <div> <a href="#explore" class="explore-btn">Explore Now</a></div>
+        </section>
+
+        <!-- Ghosts floating on screen -->
+        <div class="ghost1" id="ghost1"></div>
+        <div class="ghost2" id="ghost2"></div>
+        <div class="ghost3" id="ghost3"></div>
+    </header>
+    
+    <script>
+        function playHalloweenAudio() {
+            const audio = new Audio('horror-music-scary-creepy-dark-ambient-cinematic-lullaby-115049.mp3');
+            audio.loop = true;
+            audio.play();
+        }
+
+        document.getElementById('play-btn').addEventListener('click', playHalloweenAudio);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        @font-face{
+            src:url("shlop rg.otf");
+            font-family:"shlop";
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            position: relative;
+            font-family: 'shlop', sans-serif;
+            color: orange;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Video background styling */
+        video#background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .main {
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .countdown-container {
+            width: 500px;
+            color: orange;
+            font-family: 'shlop';
+        }
+
+        .countdown-container div {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #days, #hours, #minutes, #seconds {
+            font-family: 'shlop';
+            font-size: 40px;
+        }
+
+        h1 {
+            font-family: 'shlop';
+            margin-bottom: 0;
+        }
+
+        .return-home {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-family: 'Creepster', cursive;
+            font-size: 18px;
+            color: white;
+            background-color: orange;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .return-home:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video id="background-video" autoplay muted loop>
+        <source src="https://res.cloudinary.com/djg1vm3op/video/upload/v1726210709/Version2_g47wsf.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="main">
+        <div class="countdown-container">
+            <h1 class="fh1">Days Remaining</h1>
+            <div id="days">0</div>
+            <h1 class="sh1">Hours Remaining</h1>
+            <div id="hours">0</div>
+            <h1 class="th1">Minutes Remaining</h1>
+            <div id="minutes">0</div>
+            <h1 class="fh1">Seconds Remaining</h1>
+            <div id="seconds">0</div>
+        </div>
+        <a href="#" class="return-home">Return Home</a>
+    </div>
+
+    <script>
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const targetDate = new Date('October 31 , 2024 23:59:59').getTime(); // Replace with your desired target date
+            const timeDifference = targetDate - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            daysElement.textContent = days;
+            hoursElement.textContent = hours;
+            minutesElement.textContent = minutes;
+            secondsElement.textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000); // Update every second
+    </script>
+    
+</body>
+</html>

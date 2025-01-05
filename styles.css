@@ -1,0 +1,139 @@
+/* Global Styling */
+body {
+    font-family: 'Creepster', cursive;
+    margin: 0;
+    padding: 0;
+    background: url('https://res.cloudinary.com/djg1vm3op/image/upload/v1726083842/pngtree-halloween-wallpapers-and-backgrounds-for-laptop-or-desktop-picture-image_3712599_rmek5m.png') no-repeat center center fixed;
+
+    background-size: cover;
+    color: white;
+}
+
+header {
+    position: relative;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: orange;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+/* Title Section */
+.title-section h1 {
+    font-size: 80px;
+    margin: 0;
+    color: #ff00ff;
+    text-shadow: 2px 2px 5px black;
+}
+
+.title-section p {
+    font-size: 24px;
+    margin: 10px 0;
+    text-shadow: 1px 1px 4px black;
+}
+
+.explore-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: red;
+}
+
+/* Flying Ghosts */
+.ghost1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+        background: url('GHOST1.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.7;
+}
+.ghost2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+        background: url('GHOST2.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.7;
+}
+.ghost3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+        background: url('GHOST3.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.7;
+}
+
+#ghost1 {
+    top: 10%;
+    left: 5%;
+    animation: floatGhost1 5s ease-in-out infinite;
+    
+}
+
+#ghost2 {
+    top: 30%;
+    right: 10%;
+    animation: floatGhost2 6s ease-in-out infinite;
+}
+
+#ghost3 {
+    top: 70%;
+    left: 10%;
+    animation: floatGhost3 7s ease-in-out infinite;
+}
+
+/* Ghost Floating Animations */
+@keyframes floatGhost1 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatGhost2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatGhost3 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Creepster', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #f39c12;
+            text-shadow: 0 0 10px #f3129d, 0 0 20px #f39c12, 0 0 30px #f39c12;
+            animation: flicker 1.5s infinite;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #f3129d;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #f39c12;
+            color: #1c1c1c;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #f39c12;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Flickering Text Animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 22%, 24%, 55% {
+                opacity: 0.1;
+            }
+        }
+
+        /* Background video styling */
+        video#background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.5;
+        }
+
+        /* Ensure content stays on top */
+        body:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video id="background-video" autoplay muted loop>
+        <source src="https://res.cloudinary.com/djg1vm3op/video/upload/v1726209556/halloween_pumpkin_bats_qpkgeq.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Success!</h1>
+    <h2>You’ve Registered Successfully</h2>
+    <p>Thank you for joining our spooky event! Get ready for a frightfully good time!</p>
+
+    <!-- Home Button -->
+    <a href="index.html" class="home-button">Return Home</a>
+    
+</body>
+</html>
